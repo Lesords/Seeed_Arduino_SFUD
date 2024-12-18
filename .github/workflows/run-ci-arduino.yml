@@ -27,10 +27,14 @@ jobs:
         run: |
           # eg: echo "<repo>" >> depend.list
           echo "Seeed-Studio/Seeed_Arduino_FS" >> depend.list
+          # echo "Lesords/Seeed_Arduino_FS" >> depend.list
 
       - name: Create a ignore.list file
         run: |
           # eg: echo "<path>,<fqbn>" >> ignore.list
+          echo "FSReadWrite,esp32:esp32:XIAO_ESP32C3" >> ignore.list
+          echo "FSReadWrite,esp32:esp32:XIAO_ESP32C6" >> ignore.list
+          echo "FSReadWrite,esp32:esp32:XIAO_ESP32S3" >> ignore.list
 
       - name: Build sketch
         run: ./ci/tools/compile.sh
